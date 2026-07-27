@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --parchment: #FBF9F5;
+  --ink: #0D1117;
+  --sunset: #6D2A8D;
+  --cream: #FFFFFF;
+  --emerald: #A853D4;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: var(--parchment);
+  color: var(--ink);
+  overflow-x: hidden;
+}
+
+/* Manga panel shimmer skeleton */
+.shimmer-skeleton {
+  background: linear-gradient(
+    90deg,
+    rgba(13, 17, 23, 0.04) 0%,
+    rgba(13, 17, 23, 0.10) 40%,
+    rgba(109, 42, 141, 0.14) 50%,
+    rgba(13, 17, 23, 0.10) 60%,
+    rgba(13, 17, 23, 0.04) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s linear infinite;
+}
+
+/* Hide native number spinners */
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Custom range slider — base reset */
+input[type='range'] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+/* Slider track handled by JS wrapper; thumb styled per-browser */
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 26px;
+  height: 26px;
+  border-radius: 0;
+  background: #6D2A8D;
+  border: 2px solid #0D1117;
+  box-shadow: 0 0 0 2px #FFFFFF, 3px 3px 0 #0D1117;
+  transition: transform 0.12s ease;
+}
+input[type='range']::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+}
+input[type='range']::-webkit-slider-thumb:active {
+  transform: scale(0.95);
+  background: #4D1B64;
+}
+input[type='range']::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  border-radius: 0;
+  background: #6D2A8D;
+  border: 2px solid #0D1117;
+  box-shadow: 0 0 0 2px #FFFFFF, 3px 3px 0 #0D1117;
+}
+
+/* Selection */
+::selection {
+  background: #6D2A8D;
+  color: #FFFFFF;
+}
+
+/* Thin scrollbar for dropdowns */
+.thin-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.thin-scroll::-webkit-scrollbar-track {
+  background: rgba(13, 17, 23, 0.05);
+}
+.thin-scroll::-webkit-scrollbar-thumb {
+  background: #0D1117;
+  border-radius: 0;
+}
+
+/* Tabular numbers for currency readouts */
+.tnum {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'tnum';
+}
+
+/* Cell-shaded 3D press physics for primary buttons & input pills.
+   Buttons lift on hover (-2px, -2px) and slam down on active
+   (+2px, +2px) with the shadow collapsing — a tactile manga-press. */
+.press-physics {
+  transition:
+    transform 0.12s cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 0.12s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.press-physics:hover {
+  transform: translate(-2px, -2px);
+}
+.press-physics:active {
+  transform: translate(2px, 2px);
+  box-shadow: none;
+}
