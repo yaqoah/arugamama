@@ -1,7 +1,8 @@
 {
-  "builds": {
+  "functions": {
     "api/*.py": {
-      "use": "@vercel/python"
+      "runtime": "python@3.11",
+      "includeFiles": "model_artifacts/**"
     }
   }
 }
