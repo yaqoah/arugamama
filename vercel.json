@@ -1,7 +1,7 @@
 {
-  "functions": {
+  "builds": {
     "api/*.py": {
-      "runtime": "vercel-python@latest"
+      "use": "@vercel/python"
     }
   }
 }
