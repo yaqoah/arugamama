@@ -48,6 +48,7 @@ downloads/
 eggs/
 .eggs/
 lib/
+!src/lib/
 lib64/
 parts/
 sdist/
@@ -69,3 +70,6 @@ htmlcov/
 # OS Files
 .DS_Store
 Thumbs.db
+
+# Build artifacts
+*.timestamp-*

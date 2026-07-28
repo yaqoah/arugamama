@@ -9,6 +9,7 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
+    extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
   },
   optimizeDeps: {
     exclude: ['lucide-react'],
